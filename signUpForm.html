@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<title>Address Book</title>
+	<meta name = "description" content = "AddressBookApp"/>
+	<meta name = "keywords" content = "address, addressbook, addressbookapp, app"/>
+	<meta http-equiv="X-UA-Compatible" content = "IE=edge,chrome=1"/>
+	<link rel="stylesheet" href="styleMain.css" type="text/css" />
+	<link rel="stylesheet" href="css/styleSignUpForm.css" type="text/css" />
+
+</head>
+
+
+
+
+<body>
+	<div class = "modal">
+		<span class = "close" title="Close Modal">&times;</span>
+			<div class = "signUpArea">
+				<div class = "signUpWindow animate">
+					<form action="register.php" method="post">
+					<h2>Sign Up</h2>
+					<div class ="inputs">
+						<input type="text" name="name" class="login" placeholder="Enter Name">
+						<input type="text" name="username" class="login" placeholder="Enter Username">
+						<input type="email" name="email" class="login" placeholder="Enter Email" >
+						
+						<input type="password" name="password" class="login" placeholder="Enter Password" >
+						
+						<input type="password" name="repeatpassword" class="login" placeholder="Repeat Password" >
+			
+						<div class="Buttons">
+							<button type="submit" class= "signUp" value="signUp">Sign Up</button>
+							<button type="button" class= "closeButton">Cancel</button>
+						</div>
+			
+			
+					</div>
+					</form>
+				</div>
+			</div>
+			
+	<script type="text/javascript" src="js/signUpForm.js"></script>
+	</div>
+</body>
+</html>

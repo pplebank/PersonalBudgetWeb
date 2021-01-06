@@ -1,0 +1,7 @@
+
+.icon-money { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe800;&nbsp;'); }
+.icon-calendar { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe801;&nbsp;'); }
+.icon-tags { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe802;&nbsp;'); }
+.icon-down-dir { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe803;&nbsp;'); }
+.icon-cc-visa { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf1f0;&nbsp;'); }
+.icon-sticky-note-o { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf24a;&nbsp;'); }

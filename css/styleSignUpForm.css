@@ -1,0 +1,67 @@
+.modal
+{
+	height: 100vh;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr; 
+	background-color: rgba(0,0,0,0.7);
+}
+
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+
+.signUpArea
+{
+	padding: 40px;
+	justify-self: center;
+	align-self: center;
+	grid-column: 1/-1;
+	grid-row:1/-1;	
+}
+
+.signUpWindow
+{
+text-align: center;
+padding: 10px 50px 30px 50px;
+background-color: white;
+border: 2px solid black;
+border-radius: 5px;	
+-webkit-box-shadow: 10px -4px 28px -10px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px -4px 28px -10px rgba(0,0,0,0.75);
+box-shadow: 10px -4px 28px -10px rgba(0,0,0,0.75);
+}
+
+.inputs
+{
+margin-top: 30px;	
+}
+
+
+
+.inputs>input
+{
+display: block;
+
+}
+
+
+.Buttons
+{
+display: flex;
+margin-top: 40px;
+justify-content:space-around;
+}
+
