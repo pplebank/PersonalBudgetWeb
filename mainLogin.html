@@ -1,84 +1,127 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8"/>
-	<title>Address Book</title>
-	<meta name = "description" content = "AddressBookApp"/>
-	<meta name = "keywords" content = "address, addressbook, addressbookapp, app"/>
-	<meta http-equiv="X-UA-Compatible" content = "IE=edge,chrome=1"/>
-	<link rel="stylesheet" href="styleMain.css" type="text/css"/>
-	<link rel="stylesheet" href="css/styleMainLogin.css" type="text/css"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href = "icons/css/face.css" />
-	
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" >
 </head>
-<body>
+<body class="d-flex flex-column">
 
-	<div class="container">
-		<div class="header">
-			<div class = "menuHeader">
-			
-				<button type="button" class="buttonMenu" disabled>Add expense</button>
-				<button type="button"class="buttonMenu" disabled>Add income</button>
-				 <div class="dropdown">
-					<button type="button"class="buttonDropDownMenu" disabled>Balance
-					<i class="icon-down-dir"></i>
-					</button>
-					<div class="dropdown-content">
-						<a href="#">This Month</a>
-						<a href="#">Last Month</a>
-						<a href="#">Last Year</a>
-						<a href="#">Selected Period</a>
-					</div>
-				 </div>
-				<button type="button"class="buttonMenu" disabled>Your's account</button>
-			
-				<label><div class="containerMenuIcon"></label>
-				<div class="bar1"></div>
-				<div class="bar2"></div>
-				<div class="bar3"></div>
-				</div>
-			
-			</div>
-		</div>
-		<div class="loginArea">
-			<div class="loginWindow">
-			<form action="logIn.php" method="post">
-			<div class="inputs">
-					<input type="text" name="username" class="login" placeholder="Enter Username">
-					<input type="password" name="password" class="login" placeholder="Enter Password" >
-					<input type="submit" class="login" value="Login">
-					 <label class="login"><input type="checkbox"checked="checked" name="remember"> Remember me</label>
-					</form>
-					<div id = "SignUpButtonWithLabel">
-						<span>You don't have account yet?</span>
-						<button class="signUpButton">Sign Up</button>
-						</div>
-						</div>
-					
-			</div>
-			</div>
-			<div class="rightMenu">
-				<ul class = "rightMenuContent">
-					<li>About Us</li>
-					<li>Contact</li>
-					<li>Help</li>
-				</ul>
-			</div>
-			<div class="descriptionWindow">
-				<h1>Description</h1>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-			
-				<p>Where does it come from?
-				Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+    <div class="modal fade" id="modalSignUp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="card-body">
+                    <form action="signUp.php" id="signUpForm" method="post">
+                      <div class="form-group">
+                        <label for="usernameSignUp">Username</label>
+                        <input type="text" class="form-control my-2" id="usernameSignUp" placeholder="Username">
+                      </div>
+                      <div class="form-group">
+                        <label for="emailSignUp">Email address</label>
+                        <input type="email" class="form-control my-2" id="emailSignUp" placeholder="Email address">
 
-				The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
-			</div>
-		
-		<div class="footer">
-		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-		</div>
-	</div>
-	<script type="text/javascript" src="js/main.js"></script>
-</body>	
+                      </div>
+                      <div class="form-group">
+                        <label for="passwordSignUp">Password</label>
+                        <input type="password" class="form-control my-2" id="passwordSignUp" placeholder="Password">
+                      </div>
+                      <div class="form-group">
+                        <label for="passwordRepeatSignUp">Repeat password</label>
+                        <input type="password" class="form-control my-2"id="passwordRepeatSignUp" placeholder="Repeat password">
+                      </div>
+                    </form>
+                  </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" form="signUpForm" class="btn btn-primary">Sign Up</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
+        <div class="container">
+          <a href="index.html" class="navbar-brand">PersonalBudget</a>
+        </div>
+      </nav>
+      <header id="main-header" class="py-2 bg-primary text-white">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+                <h1> <i class="far fa-user"></i>Login site</h1>
+            </div>
+          </div>
+        </div>
+      </header> 
+
+      <section id="login" class="my-auto">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 col-md-8 mx-auto">
+              <div class="card">
+                <div class="card-header">
+                  <h4>Account Login</h4>
+                </div>
+                <div class="card-body">
+                  <form action="login.php" method="post">
+                    <div class="form-group">
+                      <label for="loginInput">Login</label>
+                      <input type="text" class="form-control my-2" id="loginInput">
+                    </div>
+                    <div class="form-group">
+                      <label for="passwordLogin">Password</label>
+                      <input type="password" class="form-control my-2" id="passwordLogin">
+                    </div>
+                    <div class="form-check my-2">
+                        <input class="form-check-input" type="checkbox" value="" id="rememberMe" checked>
+                        <label class="form-check-label" for="rememberMe">
+                          Remember me
+                        </label>
+                   
+                      </div>
+                      <div class="d-flex justify-content-center">
+                    <input type="submit" value="Login" class="btn btn-primary col-8 my-2">
+                      </div>
+                  </form>
+                  <div class="d-flex justify-content-center my-2">
+                  <a href="#"> Forgot password?</a>
+                </div>
+                </div>
+                <div class="card-footer d-flex justify-content-center py-3">
+                   <span> Don't have account?</span>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalSignUp" >Sign up here</a>   
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+  <!-- FOOTER -->
+  <footer id="main-footer" class="bg-dark text-white pt-2 ">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <p class="lead text-center">
+            Copyright &copy;
+            <span id="year"></span>
+            PersonalBudget
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>      
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
 </html>
