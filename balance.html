@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+</head>
+
+<body class="d-flex flex-column">
+
+    <!-- NAVBARMAIN -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark p-1">
+        <span class="navbar-brand ms-4">PersonalBudget</span>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+            <ul class="navbar-nav">
+                <li class="nav-item px-2">
+                    <a href="main.html" class="nav-link">Main Menu</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Show Balance
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="thisMonth.html">This Month</a>
+                        </li>
+                        <li><a class="dropdown-item" href="lastMonth.html">Last Month</a>
+                        </li>
+                        <li><a class="dropdown-item" href="thisYear.html">This Year</a>
+                        </li>
+                        <li><a class="dropdown-item" href="selectedPeriod.html">Selected Period</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item px-2">
+                    <a href="categories.html" class="nav-link">Categories</a>
+                </li>
+                <li class="nav-item px-2">
+                    <a href="predictions.html" class="nav-link">Predictions</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Welcome User
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="profile.html"><i class="fas fa-user-circle"></i> Profile</a>
+                        </li>
+                        <li><a class="dropdown-item" href="profileSettings.html"><i class="fas fa-users-cog"></i>
+                                Profile settings</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="logout.php" class="nav-link me-4">
+                        <i class="fas fa-user-times"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header id="main-header" class="py-2 bg-secondary text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>
+                        <i class="fas fa-balance-scale"></i> Balance</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main id="posts" class="my-auto">
+<!-- HEADERMAIN -->
+        <header class="container my-5 d-flex justify-content-center">
+            <div class="card">
+                <div class="card-header bg-secondary text-white text-center">
+                    <h4>Selected Period</h4>
+                </div>
+                <div class="d-flex flex-column p-2">
+                    <span class="display-5 my-2 text-center" id="selectedPeriod"> from 2020-01-01 to 2020-02-01</span>
+                </div>
+            </header>
+
+        <section class="container">
+            <div class="row">
+                <!-- INCOME TABLE -->
+                <div class="col-md-6 mt-5">
+                    <div class="card">
+                        <div class="card-header bg-success text-white">
+                            <h4>Incomes</h4>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-striped mb-0 table-hover" id="incomesTable">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>#</th>
+                                        <th id="incomesDate">Date</th>
+                                        <th id="incomesCategory">Category</th>
+                                        <th id="incomesAmount">Amount</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2020-12-12</td>
+                                        <td>Salary</td>
+                                        <td>300.25</td>
+                                        <td>
+                                            <a href="details.html" class="btn btn-secondary">
+                                                <i class="fas fa-angle-double-right"></i> Details
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>2020-12-13</td>
+                                        <td>Sale</td>
+                                        <td>25.25</td>
+                                        <td>
+                                            <a href="details.html" class="btn btn-secondary">
+                                                <i class="fas fa-angle-double-right"></i> Details
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>2020-09-12</td>
+                                        <td>Others</td>
+                                        <td>1250.25</td>
+                                        <td>
+                                            <a href="details.html" class="btn btn-secondary">
+                                                <i class="fas fa-angle-double-right"></i> Details
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>2019-12-12</td>
+                                        <td>Salary</td>
+                                        <td>4.99</td>
+                                        <td>
+                                            <a href="details.html" class="btn btn-secondary">
+                                                <i class="fas fa-angle-double-right"></i> Details
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>2020-01-31</td>
+                                        <td>Others</td>
+                                        <td>0.99</td>
+                                        <td>
+                                            <a href="details.html" class="btn btn-secondary">
+                                                <i class="fas fa-angle-double-right"></i> Details
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>2001-01-31</td>
+                                        <td>Others</td>
+                                        <td>40.99</td>
+                                        <td>
+                                            <a href="details.html" class="btn btn-secondary">
+                                                <i class="fas fa-angle-double-right"></i> Details
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- EXPENSE TABLE -->
+                <div class="col-md-6 mt-5">
+                    <div class="card">
+                        <div class="card-header bg-danger text-white">
+                            <h4>Expenses</h4>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-striped mb-0 table-hover" id="expensesTable">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>#</th>
+                                        <th id="expensesDate">Date</th>
+                                        <th id="expensesCategory">Category</th>
+                                        <th id="expensesAmount">Amount</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2020-12-12</td>
+                                        <td>Books</td>
+                                        <td>1300.25</td>
+                                        <td>
+                                            <a href="details.html" class="btn btn-secondary">
+                                                <i class="fas fa-angle-double-right"></i> Details
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>2010-12-13</td>
+                                        <td>Food</td>
+                                        <td>251.25</td>
+                                        <td>
+                                            <a href="details.html" class="btn btn-secondary">
+                                                <i class="fas fa-angle-double-right"></i> Details
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>2020-05-12</td>
+                                        <td>Others</td>
+                                        <td>250.25</td>
+                                        <td>
+                                            <a href="details.html" class="btn btn-secondary">
+                                                <i class="fas fa-angle-double-right"></i> Details
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>2019-12-12</td>
+                                        <td>Travel</td>
+                                        <td>4.97</td>
+                                        <td>
+                                            <a href="details.html" class="btn btn-secondary">
+                                                <i class="fas fa-angle-double-right"></i> Details
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>2020-01-31</td>
+                                        <td>Others</td>
+                                        <td>5.99</td>
+                                        <td>
+                                            <a href="details.html" class="btn btn-secondary">
+                                                <i class="fas fa-angle-double-right"></i> Details
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>2001-01-31</td>
+                                        <td>Transport</td>
+                                        <td>40.99</td>
+                                        <td>
+                                            <a href="details.html" class="btn btn-secondary">
+                                                <i class="fas fa-angle-double-right"></i> Details
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INCOME SUMMARY TABLE -->
+        <section class="container my-5">
+            <div class="col-12 row">
+                <div class="col-12 col-md-4 my-auto">
+                    <div class="card">
+                        <div class="card-header bg-success text-white">
+                            <h4>Income Summary</h4>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-striped mb-0 table-hover" id="summaryIncomes">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>#</th>
+                                        <th id="summaryIncomeCategory">Category</th>
+                                        <th id="summaryIncomeAmount">Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="card-footer text-center">
+                            <h5>Total Incomes:<span id="totalIncomes" class="text-success ms-2"></span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-8 text-center mt-5">
+                    <h5>Incomes Structure</h5>
+                    <canvas id="chartIncomes"></canvas>
+                </div>
+            </div>
+        </section>
+<!-- EXPENSE SUMMARY TABLE -->
+        <section class="container my-5">
+            <div class="col-12 row">
+                <div class="col-12 col-md-4 my-auto">
+                    <div class="card">
+                        <div class="card-header bg-danger text-white">
+                            <h4>Expense Summary</h4>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-striped mb-0 table-hover" id="summaryExpenses">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>#</th>
+                                        <th id="summaryExpenseCategory">Category</th>
+                                        <th id="summaryExpenseAmount">Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="card-footer text-center">
+                            <h5>Total Expenses:<span id="totalExpenses" class="text-danger ms-2"></span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-8 text-center mt-5">
+                    <h5>Expenses Structure</h5>
+                    <canvas id="chartExpenses"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="container my-5 d-flex justify-content-center">
+            <div class="card">
+                <div class="card-header bg-secondary text-white">
+                    <h4>Total Balance</h4>
+                </div>
+                <div class="d-flex flex-column p-2">
+                    <span class="h3 my-2 text-center" id="totalBalance"></span>
+                    <span class="h5 my-2" id="comment"></span>
+                </div>
+        </section>
+
+
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="main-footer" class="bg-dark text-white pt-2">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p class="lead text-center">
+                        Copyright &copy;
+                        <span id="year"></span>
+                        PersonalBudget
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="js/balance.js"></script>
+</body>
+
+</html>
