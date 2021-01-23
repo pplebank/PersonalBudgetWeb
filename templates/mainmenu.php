@@ -1,19 +1,8 @@
-<?php include 'includes/head.php';?>
+<?php include 'includes/navBarHead.php';?>
 <?php include 'includes/modalsMain.php';?>
-<?php include 'includes/navBar.php';?>
-
-<!-- HEADER -->
-  <header id="main-header" class="py-2 bg-primary text-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h1>
-                        <i class="fas fa-cog"></i> Main Menu</h1>
-                </div>
-            </div>
-        </div>
-    </header>
-    <?php displayMessage();?>
+<?php include 'includes/modalDetails.php';?>
+<?php include 'includes/modalBalance.php';?>
+<?php include 'includes/headers.php';?>
 
     <!-- ACTIONS -->
     <section id="actions" class="py-4 mb-4 bg-light">
@@ -55,7 +44,20 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-
+<?php foreach ($Records as $record): ?>
+                                    <tr>
+                                        <td><?php echo $record->uniqueID ?></td>
+                                        <td><?php echo $record->type ?></td>
+                                        <td><?php echo $record->date ?></td>
+                                        <td><?php echo $record->category ?></td>
+                                        <td><?php echo $record->amount ?></td>
+                                        <td>
+                                            <a class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modalDetails<?php echo $record->uniqueID ?>">
+                                                <i class="fas fa-angle-double-right"></i> Details
+                                            </a>
+                                        </td>
+                                    </tr>
+<?php endforeach;?>
                                 </tbody>
                             </table>
                         </div>
@@ -96,4 +98,7 @@
             </div>
         </div>
     </section>
+
+    <script src="<?php echo BASE_URI; ?>templates/js/jquery.js"></script>
+    <script src="<?php echo BASE_URI; ?>templates/js/reloadModal.js"></script>
     <?php include 'includes/footer.php';?>

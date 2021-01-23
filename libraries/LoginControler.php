@@ -1,4 +1,5 @@
 
+
 <?php
 
 class LoginControler
@@ -44,7 +45,7 @@ class LoginControler
     public function setUserData($row)
     {
         $_SESSION['is_logged_in'] = true;
-        $_SESSION['user_id'] = $row->id;
+        $_SESSION['id_user'] = $row->id;
         $_SESSION['username'] = $row->username;
         $_SESSION['password'] = $row->password;
     }
@@ -52,7 +53,7 @@ class LoginControler
     public function logoutUser()
     {
         unset($_SESSION['is_logged_in']);
-        unset($_SESSION['user_id']);
+        unset($_SESSION['id_user']);
         unset($_SESSION['username']);
         unset($_SESSION['password']);
     }

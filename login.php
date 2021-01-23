@@ -2,6 +2,11 @@
 
 <?php
 
+if(isLoggedIn()){
+    redirect('mainMenu.php');
+    }
+
+
 if (isset($_POST['do_login'])) {
 
     $login = new LoginControler;

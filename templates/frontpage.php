@@ -1,19 +1,5 @@
-<?php include 'includes/head.php';?>
-      <!-- HEADER-->
-      <div class="navbar navbar-expand-sm navbar-dark bg-dark p-1">
-      <span class="navbar-brand ms-4">PersonalBudget</span>
-      </div>
-      <header id="main-header" class="py-2 bg-primary text-white">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-                <h1> <i class="far fa-user"></i>Login site</h1>
-            </div>
-          </div>
-        </div>
-      </header>
-<?php displayMessage();?>
-
+<?php include 'includes/navBarHead.php';?>
+<?php include 'includes/headers.php';?>
 
    <!-- MODAL SIGN UP -->
     <div class="modal fade" id="modalSignUp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

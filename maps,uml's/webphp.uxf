@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>808</x>
+      <y>24</y>
+      <w>160</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>Database
+-
+-HOST: string;
+-USER: string;
+-PASS: string;
+-DBNAME: string;
+-databaseHandler: PDO;
+-statementHandler:;
+-error: Error;
+-
++__construct():;
++query(): void;
++bind(): void;
++execute(): void;
++resultset(): array[][];
++single(): array[];
++rowCount(): int;
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1168</x>
+      <y>360</y>
+      <w>208</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>MainMenuControler
+-
+-database: Database;
+- lastExpenses: array[][];
+- lastIncomes: array[][];
+-
++__construct(): void;
++getLastExpenses(): array[][];
++getLastIncomes(): array[][];
++addType(): void;
++addIds(): void;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1176</x>
+      <y>648</y>
+      <w>200</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>AdditionalInfoAdder
+-
+-
++addType(): void;
++assignUniqueIds(): void;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>880</x>
+      <y>360</y>
+      <w>256</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>BalanceControler
+-
+-database: Database;
++firstDate: string;
++lastDate: string;
+-
++__construct(): void;
++getDates(): bool;
++getExpensesFromGivenPeriod(): array[][];
++getIncomesFromGivenPeriod(): array[][];
++addType(): void;
++addIds(): void;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>72</x>
+      <y>360</y>
+      <w>176</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>LoginControler
+-
+-database: Database;
+-
++__construct(): void;
++getData(): array[];
++login(): bool;
++setUserData(): void;
++logoutUser(): void;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>320</x>
+      <y>360</y>
+      <w>256</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>RegisterControler
+-
+-database: Database;
+-
++__construct(): void;
++getData(): bool;
++isRequired(): bool;
++isValidEmail(): bool;
++isMailAlreadyUsed(): bool;
++isLoginAlreadyUsed(): bool;
++passwordsMatch(): bool;
++registerUser(): bool;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>352</x>
+      <y>80</y>
+      <w>136</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Template
+-
+#template: string;
+#vars: array[];
+-
++__construct(): void;
++__get(): void;
++__set(): void;
++__toString(): string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>648</x>
+      <y>624</y>
+      <w>200</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>DateChecker
+-
+-
++checkIfDateIsCorrect(): bool;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>912</x>
+      <y>624</y>
+      <w>200</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>DateGetter
+-
+-
++todaysDate(): string;
++firstDayLastMonth(): string;
++lastDayLastMonth(): string;
++firstDayThisMonth(): string;
++firstDayThisYear(): string;
++firstDayLastYear(): string;
++lastDayLastYear(): string;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1104</x>
+      <y>504</y>
+      <w>152</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1264</x>
+      <y>480</y>
+      <w>40</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;30.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>136</x>
+      <y>208</y>
+      <w>688</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;190.0;20.0;50.0;840.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>944</x>
+      <y>224</y>
+      <w>56</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>50.0;170.0;40.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>960</x>
+      <y>192</y>
+      <w>320</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>380.0;210.0;380.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>224</y>
+      <w>344</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;170.0;10.0;60.0;410.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>616</x>
+      <y>360</y>
+      <w>256</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>TransactionControler
+-
+-database: Database;
+-expenseType: bool;
+incomeType: bool;
+-
++__construct(): void;
++getData(): array[][];
++isRequired(): bool;
++isDateValid(): bool;
++isAmountValid(): bool;
++isNoteValid(): bool;
++registerTransaction(): bool;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>768</x>
+      <y>224</y>
+      <w>104</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;170.0;20.0;60.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>760</x>
+      <y>520</y>
+      <w>24</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>992</x>
+      <y>504</y>
+      <w>24</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>832</x>
+      <y>520</y>
+      <w>120</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;130.0</additional_attributes>
+  </element>
+</diagram>

@@ -6,7 +6,19 @@ if (!isLoggedIn()) {
     redirect('index.php');
 }
 
+$menuControler = new MainMenuControler;
+$lastExpenses = $menuControler->getLastExpenses();
+$menuControler->addType($lastExpenses,'Expense');
+
+$lastIncomes = $menuControler->getLastIncomes();
+$menuControler->addType($lastIncomes,'Income');
+
+$Records = array_merge($lastExpenses,$lastIncomes);
+$menuControler->addIds($Records);
+
 $template = new Template('templates/mainmenu.php');
 
-//Display template
+$template->Records = $Records;
+$template->typeHeader = "mainmenu";
+
 echo $template;

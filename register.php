@@ -2,9 +2,12 @@
 
 <?php
 
-$register = new RegisterControler;
+if(isLoggedIn()){
+    redirect('mainMenu.php');
+    }
 
 if (isset($_POST['signUpForm'])) {
+    $register = new RegisterControler;
 
     $data = $register->getData();
 
@@ -34,4 +37,6 @@ if (isset($_POST['signUpForm'])) {
     } else {
         redirect('index.php', 'Please fill in all required fields', 'error');
     }
+}else{
+    redirect('index.php');
 }
