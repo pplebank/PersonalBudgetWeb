@@ -61,7 +61,6 @@ $dateChecker = new DateChecker;
   
 }
 
-
     public function isAmountValid($amount)
     {
 

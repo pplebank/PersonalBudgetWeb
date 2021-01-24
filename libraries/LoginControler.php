@@ -12,6 +12,18 @@ class LoginControler
         $this->db = new Database;
     }
 
+    public function isRequired()
+    {
+        $requiredFields = array('username', 'password');
+        foreach ($requiredFields as $field) {
+            if ($_POST['' . $field . ''] == '') {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
     public function getData()
     {
 

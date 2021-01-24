@@ -23,7 +23,6 @@ class RegisterControler
     }
     public function isRequired()
     {
-
         $requiredFields = array('username', 'email', 'password', 'password2');
         foreach ($requiredFields as $field) {
             if ($_POST['' . $field . ''] == '') {
